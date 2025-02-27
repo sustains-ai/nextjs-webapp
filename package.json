@@ -1,9 +1,10 @@
 {
   "private": true,
   "scripts": {
-    "build": "next build && pnpm prisma generate",
+    "build": "next build",
     "dev": "next dev --turbopack",
-    "start": "next start"
+    "start": "next start",
+    "postinstall": "pnpm prisma generate"
   },
   "dependencies": {
     "@faker-js/faker": "^9.5.0",
