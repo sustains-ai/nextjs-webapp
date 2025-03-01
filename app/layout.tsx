@@ -3,6 +3,7 @@
 import "@/app/ui/global.css";
 import { inter } from "@/app/ui/fonts";
 import Navbar from "@/app/ui/Navbar";
+import Footer from "@/app/ui/Footer";
 
 export default function RootLayout({
                                        children,
@@ -16,6 +17,7 @@ export default function RootLayout({
         <main className="flex-1 p-4">
             {children}
         </main>
+        <Footer />
         </body>
         </html>
     );
