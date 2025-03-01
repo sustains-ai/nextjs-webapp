@@ -1,5 +1,8 @@
-import '@/app/ui/global.css';
-import { inter } from '@/app/ui/fonts';
+"use client";
+
+import "@/app/ui/global.css";
+import { inter } from "@/app/ui/fonts";
+import Navbar from "@/app/ui/Navbar";
 
 export default function RootLayout({
                                        children,
@@ -8,7 +11,12 @@ export default function RootLayout({
 }) {
     return (
         <html lang="en">
-        <body className={`${inter.className} antialiased`}>{children}</body>
+        <body className={`${inter.className} antialiased flex flex-col min-h-screen`}>
+        <Navbar />
+        <main className="flex-1 p-4">
+            {children}
+        </main>
+        </body>
         </html>
     );
 }

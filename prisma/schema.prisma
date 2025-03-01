@@ -4,32 +4,19 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_URL") // Ensure you have this in your .env file
+  url      = env("DATABASE_URL")
 }
 
-model User {
-  id         String      @id @default(uuid())
-  email      String      @unique
-  password   String      // Store hashed passwords
-  name       String
-  portfolios Portfolio[]
-}
 
-model Portfolio {
-  id          String   @id @default(uuid())
-  name        String
-  userId      String
-  user        User     @relation(fields: [userId], references: [id])
-  stocks      Stock[]
-}
 
-model Stock {
-  id          String    @id @default(uuid())
-  symbol      String    // Stock ticker symbol
-  name        String
-  quantity    Int
-  price       Decimal
-  exchange    String    // "NSE" or "BSE"
-  portfolioId String
-  portfolio   Portfolio @relation(fields: [portfolioId], references: [id])
+model EVSales {
+  id        Int     @id @default(autoincrement())
+  region    String
+  catogory  String
+  Parameter String
+  mode      String
+  powertrain String
+  year       Int
+  unit       String
+  value      Float
 }
