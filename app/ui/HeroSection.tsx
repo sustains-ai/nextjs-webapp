@@ -58,10 +58,10 @@ const HeroSection = () => {
                     {/* Main Hero Image */}
                     <Image
                         className="rounded-lg shadow-lg z-10"
-                        src="/img/950x950/img4.jpg"
+                        src="/img/Hero_1.jpg"
                         alt="Risk Analysis"
-                        width={500}
-                        height={500}
+                        width={700}
+                        height={700}
                         priority // Fast Loading
                     />
 

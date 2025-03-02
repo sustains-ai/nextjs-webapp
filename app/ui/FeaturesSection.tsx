@@ -1,7 +1,11 @@
-"use client";
-import { motion } from "framer-motion";
-import { useState } from "react";
-import Image from "next/image";
+"use client"
+
+import type React from "react"
+
+import { motion } from "framer-motion"
+import { useState } from "react"
+import Image from "next/image"
+import { BarChart2, Briefcase, TrendingUp } from "lucide-react"
 
 const FeaturesSection = () => {
     return (
@@ -17,35 +21,35 @@ const FeaturesSection = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
                 <FeatureCard
-                    icon="bi-graph-up-arrow"
-                    title="Precision Risk Analytics"
-                    description="Leverage cutting-edge tools to assess and mitigate risks with unparalleled accuracy."
+                    icon={<TrendingUp size={24} />}
+                    title="AI-Driven Energy Insights"
+                    description="Harness the power of AI to analyze energy trends, optimize resources, and enhance sustainability."
                 />
                 <FeatureCard
-                    icon="bi-bar-chart-line"
-                    title="Quantitative Excellence"
-                    description="Showcase our expertise in risk modeling, forecasting, and optimization."
+                    icon={<BarChart2 size={24} />}
+                    title="Comprehensive Energy Reports"
+                    description="Generate data-driven reports on energy consumption, grid performance, and future projections."
                 />
                 <FeatureCard
-                    icon="bi-briefcase"
+                    icon={<Briefcase size={24} />}
                     title="Seamless Web Solutions"
-                    description="User-friendly web platforms and robust API integrations for financial and energy analytics."
+                    description="Interactive dashboards and seamless API integrations for energy research and decision-making."
                 />
             </div>
         </section>
-    );
-};
+    )
+}
 
 const FeatureCard = ({
                          icon,
                          title,
                          description,
                      }: {
-    icon: string;
-    title: string;
-    description: string;
+    icon: React.ReactNode
+    title: string
+    description: string
 }) => {
-    const [hover, setHover] = useState(false);
+    const [hover, setHover] = useState(false)
 
     return (
         <motion.div
@@ -56,9 +60,7 @@ const FeatureCard = ({
             onMouseEnter={() => setHover(true)}
             onMouseLeave={() => setHover(false)}
         >
-            <div className="mb-4">
-                <i className={`${icon} fs-1 text-dark`}></i>
-            </div>
+            <div className="mb-4 text-gray-900">{icon}</div>
 
             <h5 className="text-xl font-semibold text-gray-900">{title}</h5>
             <p className="mt-2 text-sm text-gray-600">{description}</p>
@@ -71,16 +73,12 @@ const FeatureCard = ({
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ duration: 0.5 }}
                 >
-                    <Image
-                        src="/svg/illustrations/grid-grey.svg"
-                        alt="Glow Effect"
-                        width={120}
-                        height={120}
-                    />
+                    <Image src="/placeholder.svg?height=120&width=120" alt="Glow Effect" width={120} height={120} />
                 </motion.div>
             )}
         </motion.div>
-    );
-};
+    )
+}
 
-export default FeaturesSection;
+export default FeaturesSection
+

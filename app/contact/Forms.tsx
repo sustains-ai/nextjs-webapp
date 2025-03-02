@@ -30,7 +30,7 @@ const Form = () => {
                     >
                         <Image
                             className="rounded-lg mt-6 shadow-xl"
-                            src="/img/580x480/img1.jpg"
+                            src="/img/Office.jpg"
                             alt="Sustainability-Driven Insights"
                             width={500}
                             height={400}
